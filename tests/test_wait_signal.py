@@ -99,6 +99,7 @@ def test_signal_triggered(
     other_timer = qt_api.QtCore.QTimer()
     other_timer.setInterval(10)
     other_timer.start()
+    other_timer.connect(lambda: None)
 
     timer.single_shot(signaller.signal, delay)
 
