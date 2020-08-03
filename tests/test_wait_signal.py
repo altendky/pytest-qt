@@ -96,6 +96,10 @@ def test_signal_triggered(
     Testing for a signal in different conditions, ensuring we are obtaining
     the expected results.
     """
+    other_timer = qt_api.QtCore.QTimer()
+    other_timer.setTimeout(10)
+    other_timer.start()
+
     timer.single_shot(signaller.signal, delay)
 
     should_raise = raising and not expected_signal_triggered
